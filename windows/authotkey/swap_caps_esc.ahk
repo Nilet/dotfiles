@@ -1,0 +1,2 @@
+﻿Esc::CapsLock
+CapsLock::Esc
