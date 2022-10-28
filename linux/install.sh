@@ -27,11 +27,11 @@ echo "Yay installed"
 
 echo "Installing fonts via AUR"
 yay -Sy
-yay -S --aur $fontList
+yay -S --needed $fontList
 echo "Installed fonts via AUR"
 
 echo "Installing extras with yay"
-yay -S --aur $aurExtras
+yay -S --needed $aurExtras
 echo "Installed extra software"
 
 echo "Setting up SSH service"
