@@ -49,5 +49,5 @@ echo "SSH setup finished"
 
 echo "Installing i3currentmedia"
 cd ~/.local/scripts/
-git clone https://github.com/Nilet/i3currentmedia
+git clone https://github.com/Nilet/i3currentMedia
 echo "i3currentmedia installed"
