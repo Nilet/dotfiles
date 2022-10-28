@@ -6,7 +6,7 @@ if [ $UID -eq 0 ]; then
 fi
 
 sudo echo "Getting sudo ready"
-installList="zsh btop xorg alacritty i3status firefox dmenu thunderbird ueberzug python ffmpeg xorg-xinit fzf ripgrep zsh i3-wm picom feh mpv unclutter dunst pasystray scrot playerctl dolphin pavucontrol unrar tldr bat qbittorrent yt-dlp numlockx flac gstreamer mpd pulseaudio xfsprogs openssh"
+installList="zsh btop xorg alacritty i3status firefox dmenu thunderbird ueberzug python ffmpeg xorg-xinit fzf ripgrep zsh i3-wm picom feh mpv unclutter dunst pasystray scrot playerctl dolphin pavucontrol unrar tldr bat qbittorrent yt-dlp numlockx flac gstreamer mpd pulseaudio xfsprogs openssh python-pip"
 fontList="nerd-fonts-meslo terminus-font-td1"
 aurExtras="spotify lf discord-ptb kotatogram-desktop-bin yt-dlp jumpapp"
 
