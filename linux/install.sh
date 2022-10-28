@@ -7,7 +7,7 @@ fi
 
 sudo echo "Getting sudo ready"
 installList="zsh xorg alacritty firefox thunderbird ueberzug python ffmpeg xorg-xinit fzf ripgrep zsh i3-wm picom feh mpv unclutter dunst pasystray scrot playerctl dolphin pavucontrol unrar tldr bat qbittorrent yt-dlp numlockx flac gstreamer mpd pulseaudio xfsprogs openssh"
-fontList="ttf-meslo-nerd-font-powerlevel10k terminus-font-td1-otb"
+fontList="nerd-fonts-meslo terminus-font-td1-otb"
 aurExtras="spotify lf discord-ptb kotatogram-desktop-bin yt-dlp jumpapp"
 
 echo "Moving dotfiles to home"
@@ -33,6 +33,13 @@ echo "Installed fonts via AUR"
 echo "Installing extras with yay"
 yay -S --needed $aurExtras
 echo "Installed extra software"
+
+echo "Installing zsh plugins"
+sudo chown -R matheus ~
+cd ~/.zsh/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting
+echo "zsh plugins installed"
 
 echo "Setting up SSH service"
 sudo systemctl enable sshd.service
