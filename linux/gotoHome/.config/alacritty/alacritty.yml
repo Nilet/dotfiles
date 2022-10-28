@@ -1,0 +1,82 @@
+window:
+    dimensions:
+        columns: 85
+        lines: 23
+# Colors (Gruvbox Dark)
+colors:
+  bright:
+    black: '#7f7061'
+    blue: '#719586'
+    cyan: '#7db669'
+    green: '#aab01e'
+    magenta: '#c77089'
+    red: '#f73028'
+    white: '#e6d4a3'
+    yellow: '#f7b125'
+  cursor:
+    cursor: '#e6d4a3'
+    text: '#1e1e1e'
+  normal:
+    black: '#1e1e1e'
+    blue: '#377375'
+    cyan: '#578e57'
+    green: '#868715'
+    magenta: '#a04b73'
+    red: '#be0f17'
+    white: '#978771'
+    yellow: '#cc881a'
+  primary:
+    background: '#1e1e1e'
+    foreground: '#e6d4a3'
+  selection:
+    background: '#e6d4a3'
+    text: '#534a42'
+#Floraverse Theme
+#colors:
+#  bright:
+#    black: '#331e4d'
+#    blue: '#40a4cf'
+#    cyan: '#62caa8'
+#    green: '#b4ce59'
+#    magenta: '#f12aae'
+#    red: '#d02063'
+#    white: '#fff5db'
+#    yellow: '#fac357'
+#  cursor:
+#    cursor: '#bbbbbb'
+#    text: '#ffffff'
+#  normal:
+#    black: '#08002e'
+#    blue: '#1d6da1'
+#    cyan: '#42a38c'
+#    green: '#5d731a'
+#    magenta: '#b7077e'
+#    red: '#64002c'
+#    white: '#f3e0b8'
+#    yellow: '#cd751c'
+#  primary:
+#    background: '#0e0d15'
+#    foreground: '#dbd1b9'
+#  selection:
+#    background: '#f3e0b8'
+#    text: '#08002e'
+
+font:
+  normal:
+    family: Terminus
+    style: Regular
+
+  bold:
+    family: Terminus
+    style: Bold
+
+  italic:
+    family: Terminus
+    style: Italic
+
+  bold_italic:
+    family: Terminus
+    style: Bold Italic
+
+  size: 10
+

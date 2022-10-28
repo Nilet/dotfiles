@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/matheus/Programming/C/linkedListMarcelo/excFixacao.c'
+let g:netrw_dirhist_5='/home/matheus/.config/neofetch'
+let g:netrw_dirhist_4='/home/matheus/Programming/C'
+let g:netrw_dirhist_3='/home/matheus/Programming/C/QAdventure2'
+let g:netrw_dirhist_2='/home/matheus/.kde4/share/config'
+let g:netrw_dirhist_1='/home/matheus/.config/alacritty'

@@ -1,0 +1,57 @@
+#!/bin/bash
+
+help () {
+    printf 'Examples:\nttv-cl watch xqcow 720p\ntwitch record xqcow best\n'
+}
+
+install_function () {
+
+    if ! [[ -d $HOME/.local/bin/ ]];then
+	mkdir $HOME/.local/bin/
+    fi
+
+    cp ttv-cl $HOME/.local/bin/
+
+    printf 'ttv-cl was installed in $HOME/.local/bin/\nPlease verify if this directory is in your path...\n'
+    
+}
+
+watch_function () {
+    [[ -z "${2}" ]] && printf 'Please insert a channel name.\n' && exit 1
+    channel="${2}"
+    quality="${3}"
+
+    streamlink --quiet --player=mpv https://twitch.tv/$channel "${3}" || printf 'Please verify if ~/.local/bin/ is in your path.\n'
+}
+
+record_function () {
+    channel="${2}"
+    quality="${3}"
+    file="${4}"
+    streamlink --quiet --player=mpv --record $HOME/Videos/$file https://twitch.tv/$channel $quality
+}
+
+add_rss () {
+    channel="${2}"
+    echo $channel >> $HOME/.config/ttv-urls
+    printf $channel' added to ~/.config/ttv-urls\n'
+}
+
+feed_function () {
+    selected=$(cat $HOME/.config/ttv-urls | fzf)
+    streamlink --quiet --player=mpv https://twitch.tv/$selected best
+}
+
+main () {
+    case ${1} in
+	watch) watch_function "$@";;
+	record) record_function "$@" ;;
+	install) install_function "$@";;
+	add) add_rss "$@";;
+	feed) feed_function ;;
+	-h) help "$@";;
+	*) printf 'usage: ttv-cl watch|install|record [channel] [quality]\nttv-cl -h for more informations.' && exit 1 ;;
+    esac
+}
+
+main "$@"
