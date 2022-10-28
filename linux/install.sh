@@ -6,8 +6,8 @@ if [ $UID -eq 0 ]; then
 fi
 
 sudo echo "Getting sudo ready"
-installList="zsh xorg alacritty firefox thunderbird ueberzug python ffmpeg xorg-xinit fzf ripgrep zsh i3-wm picom feh mpv unclutter dunst pasystray scrot playerctl dolphin pavucontrol unrar tldr bat qbittorrent yt-dlp numlockx flac gstreamer mpd pulseaudio xfsprogs openssh"
-fontList="nerd-fonts-meslo terminus-font-td1-otb"
+installList="zsh xorg alacritty i3status firefox dmenu thunderbird ueberzug python ffmpeg xorg-xinit fzf ripgrep zsh i3-wm picom feh mpv unclutter dunst pasystray scrot playerctl dolphin pavucontrol unrar tldr bat qbittorrent yt-dlp numlockx flac gstreamer mpd pulseaudio xfsprogs openssh"
+fontList="nerd-fonts-meslo terminus-font-td1"
 aurExtras="spotify lf discord-ptb kotatogram-desktop-bin yt-dlp jumpapp"
 
 echo "Moving dotfiles to home"
@@ -19,6 +19,7 @@ sudo pacman -S --needed $installList
 echo "Packages installed"
 
 echo "Installing yay Aur Helper"
+rm -rf yay > /dev/null
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -45,3 +46,8 @@ echo "Setting up SSH service"
 sudo systemctl enable sshd.service
 sudo systemctl start sshd.service
 echo "SSH setup finished"
+
+echo "Installing i3currentmedia"
+cd ~/.local/scripts/
+git clone https://github.com/Nilet/i3currentmedia
+echo "i3currentmedia installed"
