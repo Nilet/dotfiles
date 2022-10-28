@@ -6,6 +6,8 @@
 
 2. ```./install.sh```
 
-- Nice to have [lunarVim](https://www.lunarvim.org/docs/installation) ```bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)```
+- Nice to have [lunarVim](https://www.lunarvim.org/docs/installation) 
+
+```bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)```
 
 
