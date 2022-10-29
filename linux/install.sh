@@ -15,7 +15,7 @@ sudo cp -r gotoHome/.* ~
 echo "Moved to home"
 echo "Installing packages"
 sudo pacman -Sy
-sudo pacman -S --needed $installList
+sudo pacman -S --needed --noconfirm $installList
 echo "Packages installed"
 
 echo "Installing yay Aur Helper"
@@ -28,15 +28,16 @@ echo "Yay installed"
 
 echo "Installing fonts via AUR"
 yay -Sy
-yay -S --needed $fontList
+yay -S --needed --noconfirm $fontList
 echo "Installed fonts via AUR"
 
 echo "Installing extras with yay"
-yay -S --needed $aurExtras
+yay -S --needed --noconfirm $aurExtras
 echo "Installed extra software"
 
 echo "Installing zsh plugins"
 sudo chown -R matheus ~
+mkdir ~/.zsh/plugins
 cd ~/.zsh/plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting
@@ -51,3 +52,7 @@ echo "Installing i3currentmedia"
 cd ~/.local/scripts/
 git clone https://github.com/Nilet/i3currentMedia
 echo "i3currentmedia installed"
+
+echo "Changing zsh to default shell"
+chsh -s /usr/bin/zsh
+echo "ZSH as default shell now"
