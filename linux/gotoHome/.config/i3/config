@@ -184,7 +184,7 @@ bindsym --release Control+Print	exec --no-startup-id import /tmp/screenshot.png 
 #Assigning specific windows settings
 for_window [class="mpv"] floating enable
 for_window [class="pavucontrol"] floating enable
-for_window [class="dolphin"] floating enable
+for_window [class="nautilus"] floating enable
 assign [class="firefox"] 1
 assign [class="discord"] 2
 assign [class="Kotatogram"] 3
@@ -207,7 +207,7 @@ bindsym F9 exec "jumpapp kotatogram-desktop"
 bindsym Insert exec "jumpapp spotify"
 bindsym F7 exec "jumpapp alacritty"
 bindsym F8 exec "jumpapp discord-ptb"
-bindsym $mod+e exec "jumpapp dolphin"
+bindsym $mod+e exec "jumpapp nautilus"
 
 # Pulse Audio controls (has no volume limit, and this is a feature, not a bug)
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
