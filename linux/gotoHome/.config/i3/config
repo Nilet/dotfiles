@@ -163,7 +163,7 @@ bar {
 }
 
 #disable titlebar
-#for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 1
 
 #Wallpaper
 exec --no-startup-id feh --bg-scale /home/matheus/Pictures/Wallpaper.png
