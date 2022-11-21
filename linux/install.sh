@@ -6,7 +6,7 @@ if [ $UID -eq 0 ]; then
 fi
 
 sudo echo "Getting sudo ready"
-installList="zsh btop xorg linux-headers xdg-utils xdg-user-dirs networkmanager alacritty i3status firefox dmenu thunderbird ueberzug python ffmpeg xorg-xinit fzf ripgrep zsh i3-wm picom feh mpv unclutter dunst pasystray scrot playerctl nautilus pavucontrol unrar tldr bat qbittorrent yt-dlp numlockx flac gstreamer mpd pulseaudio xfsprogs openssh python-pip xclip xsel"
+installList="zsh btop xorg linux-headers xdg-utils xdg-user-dirs networkmanager alacritty i3status firefox dmenu thunderbird ueberzug python ffmpeg xorg-xinit fzf ripgrep zsh i3-wm picom feh mpv unclutter dunst pasystray scrot playerctl nautilus pavucontrol unrar tldr bat qbittorrent yt-dlp numlockx flac gstreamer mpd pulseaudio xfsprogs openssh python-pip xclip xsel thunar tumbler thunar-volman ffmpegthumbnailer libgsf libgepub"
 fontList="nerd-fonts-meslo terminus-font-td1 noto-fonts-emoji imagemagick"
 aurExtras="spotify lf discord-ptb kotatogram-desktop-bin yt-dlp jumpapp"
 
@@ -55,4 +55,4 @@ echo "i3currentmedia installed"
 
 echo "Changing zsh to default shell"
 chsh -s /usr/bin/zsh
-echo "ZSH as default shell now"
+echo "ZSH is the default shell now"
