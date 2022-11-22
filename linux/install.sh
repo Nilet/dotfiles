@@ -6,7 +6,7 @@ if [ $UID -eq 0 ]; then
 fi
 
 sudo echo "Getting sudo ready"
-installList="zsh btop xorg linux-headers xdg-utils xdg-user-dirs imagemagick networkmanager alacritty i3status firefox dmenu thunderbird ueberzug python ffmpeg xorg-xinit fzf ripgrep zsh i3-wm picom feh mpv unclutter dunst pasystray scrot playerctl nautilus pavucontrol unrar tldr bat qbittorrent yt-dlp numlockx flac gstreamer mpd pulseaudio xfsprogs openssh python-pip xclip xsel thunar tumbler thunar-volman ffmpegthumbnailer libgsf libgepub"
+
 fontList="nerd-fonts-meslo terminus-font-td1 noto-fonts-emoji noto-fonts-cjk" 
 aurExtras="spotify lf discord-ptb kotatogram-desktop-bin yt-dlp jumpapp"
 
@@ -15,7 +15,7 @@ sudo cp -r gotoHome/.* ~
 echo "Moved to home"
 echo "Installing packages"
 sudo pacman -Sy
-sudo pacman -S --needed --noconfirm $installList
+sudo pacman -S --needed --noconfirm $(cat installList)
 echo "Packages installed"
 
 echo "Installing yay Aur Helper"
