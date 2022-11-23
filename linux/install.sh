@@ -8,7 +8,7 @@ fi
 sudo echo "Getting sudo ready"
 
 fontList="nerd-fonts-meslo terminus-font-td1 noto-fonts-emoji noto-fonts-cjk" 
-aurExtras="spotify lf discord-ptb kotatogram-desktop-bin yt-dlp jumpapp"
+aurExtras="spotify lf discord-ptb yt-dlp jumpapp"
 
 echo "Moving dotfiles to home"
 sudo cp -r gotoHome/.* ~
