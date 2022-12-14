@@ -166,7 +166,7 @@ bar {
 for_window [class="^.*"] border pixel 1
 
 #Wallpaper
-exec --no-startup-id feh --bg-scale /home/matheus/Pictures/Wallpaper.png
+exec --no-startup-id feh --bg-tile /home/matheus/Pictures/wallpaper.png
 
 #"hardware" shit
 exec --no-startup-id setxkbmap -option caps:swapescape
