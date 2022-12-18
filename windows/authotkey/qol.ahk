@@ -11,7 +11,8 @@ Run, firefox.exe
 return
 }
 
-; windows terminal, raise or launch on f9
+; windows terminal, raise or launch on F7 or Win+Enter
+#Enter::
 F7::
 IfWinExist ahk_exe WindowsTerminal.exe
 {
@@ -39,6 +40,8 @@ toggleMaxWindow()
   }
 }
 
+;jump to last active windows with f1
+F2::Send !{Tab}
 ; close window with f4
 F4::Send !{F4}
 ;; scrollLock toggles hotkeys on and off, useful for gaming
