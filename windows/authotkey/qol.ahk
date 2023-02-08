@@ -25,6 +25,19 @@ Run, wt.exe
 return
 }
 
+; Spotify, raise or launch on Insert
+Insert::
+IfWinExist ahk_exe Spotify.exe
+{
+WinActivate, ahk_exe Spotify.exe
+return
+}
+IfWinNotExist ahk_exe Spotify.exe
+{
+Run, spotify.exe
+return
+}
+
 ; toggle maximize on F1
 F1::toggleMaxWindow()
 toggleMaxWindow()
