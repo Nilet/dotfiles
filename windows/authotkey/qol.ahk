@@ -1,11 +1,11 @@
 ; firefox, raise or launch on f7
 F6::
-IfWinExist ahk_class MozillaWindowClass
+IfWinExist ahk_exe firefox.exe
 {
-WinActivate, ahk_class MozillaWindowClass
+WinActivate, ahk_exe firefox.exe
 return
 }
-IfWinNotExist ahk_class MozillaWindowClass
+IfWinNotExist ahk_exe firefox.exe
 {
 Run, firefox.exe
 return
