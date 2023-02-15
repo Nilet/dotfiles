@@ -12,6 +12,7 @@ fontList="nerd-fonts-meslo terminus-font noto-fonts-emoji noto-fonts-cjk"
 aurExtras="spotify lf yt-dlp jumpapp"
 
 echo "Moving dotfiles to home"
+sudo pacman -S --noconfirm rsync 
 rsync -av gotoHome/ ~
 echo "Moved to home"
 
