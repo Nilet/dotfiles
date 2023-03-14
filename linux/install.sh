@@ -9,7 +9,7 @@ echo "Getting sudo ready"
 sudo -v
 
 fontList="nerd-fonts-meslo terminus-font noto-fonts-emoji noto-fonts-cjk"
-aurExtras="spotify lf yt-dlp jumpapp"
+aurExtras="spotify lf jumpapp"
 
 echo "Moving dotfiles to home"
 sudo pacman -S --noconfirm rsync 
