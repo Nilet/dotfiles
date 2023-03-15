@@ -61,5 +61,6 @@ chsh -s /usr/bin/zsh
 echo "ZSH is the default shell now"
 
 sed -i "s/matheus/$(whoami)/g" ~/.config/i3/config
+sed -i "s/matheus/$(whoami)/g" ~/.zshrc
 
 echo "Setup complete"
