@@ -169,9 +169,11 @@ for_window [class="^.*"] border pixel 1
 exec --no-startup-id feh --bg-tile /home/matheus/Pictures/wallpaper.png
 
 #"hardware" shit
-exec --no-startup-id setxkbmap -option caps:swapescape
-exec --no-startup-id xinput disable "SynPS/2 Synaptics TouchPad"
-exec --no-startup-id xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Speed" -0.5
+exec_always --no-startup-id setxkbmap -option caps:swapescape
+exec_always --no-startup-id xinput disable "SynPS/2 Synaptics TouchPad"
+exec_always --no-startup-id xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Speed" -0.5
+exec_always --no-startup-id xinput set-prop "Logitech G203 Prodigy Gaming Mouse" "libinput Accel Speed" -0.75
+exec_always --no-startup-id numlockx
 exec unclutter
 exec dunst
 exec pasystray
@@ -189,7 +191,7 @@ assign [class="firefox"] 1
 assign [class="discord"] 2
 assign [class="TelegramDesktop"] 3
 for_window [class="Spotify"] move to workspace $ws4
-assign [class="Thunderbird"] 5
+assign [class="thunderbird"] 5
 assign [class="qBittorrent"] 9
 
 for_window [window_role="pop-up"] floating enable

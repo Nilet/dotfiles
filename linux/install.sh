@@ -8,7 +8,7 @@ fi
 echo "Getting sudo ready"
 sudo -v
 
-fontList="nerd-fonts-meslo terminus-font noto-fonts-emoji noto-fonts-cjk"
+fontList="nerd-fonts-meslo terminus-font noto-fonts-emoji noto-fonts-cjk ttf-terminus-nerd"
 aurExtras="spotify lf jumpapp"
 
 echo "Moving dotfiles to home"
@@ -26,6 +26,7 @@ rm -rf yay > /dev/null
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+rm -rf yay > /dev/null
 cd ~
 echo "Yay installed"
 
