@@ -45,16 +45,16 @@ return require('packer').startup(function(use)
                 require('gitsigns').setup()
             end
         }, }
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup({ toggler = { line = '<leader>/', block = '<leader>/' } })
-        end
-    }
-    use { "akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
-    end }
-    use { "Pocco81/auto-save.nvim",
+        use {
+            'numToStr/Comment.nvim',
+            config = function()
+                require('Comment').setup({ toggler = { line = '<leader>/', block = '<leader>/' } })
+            end
+        }
+        use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+            require("toggleterm").setup()
+        end }
+        use { "Pocco81/auto-save.nvim",
         config = function()
             require("auto-save").setup()
         end
@@ -62,4 +62,5 @@ return require('packer').startup(function(use)
     -- Unless you are still migrating, remove the deprecated commands from v1.x
 
     use "nvim-tree/nvim-tree.lua"
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 end)

@@ -41,10 +41,15 @@ echo "Installed extra software"
 
 echo "Installing zsh plugins"
 mkdir -p ~/.zsh/plugins
-cd ~/.zsh/plugins
-git clone https://github.com/zsh-users/zsh-autosuggestions
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions/
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/plugins/fast-syntax-highlighting/
 echo "zsh plugins installed"
+
+echo "Setting up neovim"
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+nvim -c ":PackerSync"
+echo "Nvim working as usual"
 
 echo "Setting up SSH service"
 sudo systemctl enable sshd.service
@@ -53,8 +58,7 @@ echo "SSH setup finished"
 
 echo "Installing i3currentmedia"
 mkdir -p ~/.local/scripts/
-cd ~/.local/scripts/
-git clone https://github.com/Nilet/i3currentMedia
+git clone https://github.com/Nilet/i3currentMedia ~/.local/scripts/i3currentMedia/
 echo "i3currentmedia installed"
 
 echo "Changing zsh to default shell"
