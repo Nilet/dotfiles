@@ -63,4 +63,5 @@ return require('packer').startup(function(use)
 
     use "nvim-tree/nvim-tree.lua"
     use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use "folke/neodev.nvim"
 end)
