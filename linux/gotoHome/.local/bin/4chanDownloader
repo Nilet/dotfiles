@@ -1,0 +1,62 @@
+#!/bin/sh
+
+getSubject()
+{
+	subject=$(grep -oP -i '<span class="subject">[^<]*</span>' .tmpJunk/tempDownloadedPage.html | head -n 1 | sed 's/<span class\=\"subject\">//' | sed 's/<\/span>//g' | sed 's/ /_/g')
+
+		echo $subject 
+}
+
+generateLinkList(){
+	grep -oP '<a class="fileThumb" href="[^"]*" target="_blank">' .tmpJunk/tempDownloadedPage.html | sed 's/<a class\=\"fileThumb\" href\=\"\/\///g' | sed 's/\" target\=\"_blank\">//g' | sed 's/^/https:\/\//g' > .tmpJunk/mediaList.txt
+}
+
+getBoard()
+{
+	echo $1 | grep -oP -i '([a-zA-Z]+(/[a-zA-Z0-9]+))' | sed 's/org\///' | sed 's/thread\/[0-9]*//'
+}
+
+userAgent=$(echo "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:21.0) Gecko/20100101 Firefox/21.0")
+
+board=$(getBoard $1)
+
+echo Downloading thread from $board
+
+rm -r .tmpJunk* &> /dev/null
+mkdir .tmpJunk
+aria2c --out=.tmpJunk/tempDownloadedPage.html  $1 --user-agent "$userAgent" &> /dev/null
+
+subject="$2"
+
+
+if [ -z "$subject" ]
+then
+subject="$(getSubject)"
+fi
+
+if [ -z "$subject" ] || [ "$subject" == "_" ]
+then
+	echo "Error getting the subject name, insert how you want to call the folder: "
+	read subject
+fi
+
+generateLinkList
+
+pathToDownload=$HOME/4chan-scraped/$board/$subject
+
+count=1
+max=$(wc -l < .tmpJunk/mediaList.txt)
+for link in `cat .tmpJunk/mediaList.txt`
+do
+	aria2c --dir=$pathToDownload $link &> /dev/null
+	echo Downloaded [ $count / $max ]
+	let "count++"
+done
+
+
+echo "$subject downloaded to $pathToDownload"
+
+
+rm -r .tmpJunk
+rm $pathToDownload/*.1 &> /dev/null
+rm $pathToDownload/*.1.* &> /dev/null
