@@ -60,9 +60,10 @@ return require('packer').startup(function(use)
             require("auto-save").setup()
         end
     }
-    -- Unless you are still migrating, remove the deprecated commands from v1.x
-
     use "nvim-tree/nvim-tree.lua"
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use "folke/neodev.nvim"
+    use "nacro90/numb.nvim"
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)
