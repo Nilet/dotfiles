@@ -1,5 +1,5 @@
 export EDITOR=nvim
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/matheus/.local/bin:home/matheus/.cargo/bin:/home/matheus/.npm-global/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/matheus/.local/bin:/home/matheus/.cargo/bin:/home/matheus/.npm-global/bin
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
 alias ls='ls --color=auto'
