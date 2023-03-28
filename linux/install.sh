@@ -46,7 +46,7 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/p
 echo "zsh plugins installed"
 
 echo "Setting up neovim"
-git clone https://github.com/Nilet/blzNvim ~/.config/nvim
+git clone https://github.com/Nilet/nvim ~/.config/nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 nvim -c ":PackerSync"
