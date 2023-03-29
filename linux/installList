@@ -56,3 +56,5 @@ discord
 go
 vim
 neovim
+lua-language-server
+luarocks

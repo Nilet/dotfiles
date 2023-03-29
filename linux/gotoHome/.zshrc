@@ -70,7 +70,7 @@ bindkey -v '^?' backward-delete-char
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[cyan]%}[%{$fg[cyan]%}%n%{$fg[green]%}@%{$fg[cyan]%}%M %{$fg[cyan]%}%~%{$fg[cyan]%}]%{$reset_color%}$%b ".
+PS1="%B%{$fg[cyan]%}[%{$fg[cyan]%}%n%{$fg[green]%}@%{$fg[cyan]%}%M %{$fg[cyan]%}%~%{$fg[cyan]%}]%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
 setopt interactive_comments
 
