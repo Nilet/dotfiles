@@ -58,3 +58,4 @@ vim
 neovim
 lua-language-server
 luarocks
+locate
