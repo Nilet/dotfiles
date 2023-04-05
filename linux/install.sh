@@ -8,7 +8,7 @@ fi
 echo "Getting sudo ready"
 sudo -v
 
-fontList="nerd-fonts-meslo terminus-font noto-fonts-emoji noto-fonts-cjk ttf-terminus-nerd"
+fontList="nerd-fonts-meslo terminus-font noto-fonts-emoji noto-fonts-cjk ttf-terminus-nerd ttf-hack"
 aurExtras="spotify lf jumpapp"
 
 echo "Moving dotfiles to home"

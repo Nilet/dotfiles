@@ -34,19 +34,19 @@ colors:
 
 font:
   normal:
-    family: Terminus
+    family: Hack
     style: Regular
 
   bold:
-    family: Terminus
+    family: Hack
     style: Bold
 
   italic:
-    family: Terminus
+    family: Hack
     style: Italic
 
   bold_italic:
-    family: Terminus
+    family: Hack
     style: Bold Italic
 
   size: 10
