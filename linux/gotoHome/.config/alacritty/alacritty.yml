@@ -2,64 +2,35 @@ window:
     dimensions:
         columns: 85
         lines: 23
-# Colors (Gruvbox Dark)
+# Colors (GruvboxDarkHard)
 colors:
   bright:
-    black: '#7f7061'
-    blue: '#719586'
-    cyan: '#7db669'
-    green: '#aab01e'
-    magenta: '#c77089'
-    red: '#f73028'
-    white: '#e6d4a3'
-    yellow: '#f7b125'
+    black: '#928374'
+    blue: '#83a598'
+    cyan: '#8ec07c'
+    green: '#b8bb26'
+    magenta: '#d3869b'
+    red: '#fb4934'
+    white: '#ebdbb2'
+    yellow: '#fabd2f'
   cursor:
-    cursor: '#e6d4a3'
-    text: '#1e1e1e'
+    cursor: '#ebdbb2'
+    text: '#1b1b1b'
   normal:
-    black: '#1e1e1e'
-    blue: '#377375'
-    cyan: '#578e57'
-    green: '#868715'
-    magenta: '#a04b73'
-    red: '#be0f17'
-    white: '#978771'
-    yellow: '#cc881a'
+    black: '#1b1b1b'
+    blue: '#458588'
+    cyan: '#689d6a'
+    green: '#98971a'
+    magenta: '#b16286'
+    red: '#cc241d'
+    white: '#a89984'
+    yellow: '#d79921'
   primary:
-    background: '#1e1e1e'
-    foreground: '#e6d4a3'
+    background: '#1b1b1b'
+    foreground: '#ebdbb2'
   selection:
-    background: '#e6d4a3'
-    text: '#534a42'
-#Floraverse Theme
-#colors:
-#  bright:
-#    black: '#331e4d'
-#    blue: '#40a4cf'
-#    cyan: '#62caa8'
-#    green: '#b4ce59'
-#    magenta: '#f12aae'
-#    red: '#d02063'
-#    white: '#fff5db'
-#    yellow: '#fac357'
-#  cursor:
-#    cursor: '#bbbbbb'
-#    text: '#ffffff'
-#  normal:
-#    black: '#08002e'
-#    blue: '#1d6da1'
-#    cyan: '#42a38c'
-#    green: '#5d731a'
-#    magenta: '#b7077e'
-#    red: '#64002c'
-#    white: '#f3e0b8'
-#    yellow: '#cd751c'
-#  primary:
-#    background: '#0e0d15'
-#    foreground: '#dbd1b9'
-#  selection:
-#    background: '#f3e0b8'
-#    text: '#08002e'
+    background: '#665c54'
+    text: '#ebdbb2'
 
 font:
   normal:
@@ -78,5 +49,5 @@ font:
     family: Terminus
     style: Bold Italic
 
-  size: 10
+  size: 11
 
