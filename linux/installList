@@ -60,3 +60,5 @@ lua-language-server
 luarocks
 locate
 time
+base-devel
+base
