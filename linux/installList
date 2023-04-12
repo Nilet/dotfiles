@@ -62,3 +62,6 @@ locate
 time
 base-devel
 base
+calc
+node
+npm
