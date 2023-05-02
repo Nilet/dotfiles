@@ -45,6 +45,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-au
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/plugins/fast-syntax-highlighting/
 echo "zsh plugins installed"
 
+echo "tmux time"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+~/.tmux/plugins/tpm/bin/install_plugins
+echo "tmux finally set up"
+
 echo "Setting up neovim"
 git clone https://github.com/Nilet/nvim ~/.config/nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
