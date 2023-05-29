@@ -63,7 +63,7 @@ time
 base-devel
 base
 calc
-node
+nodejs
 npm
 wget
 tmux
