@@ -170,7 +170,6 @@ exec --no-startup-id feh --bg-tile /home/matheus/Pictures/wallpaper.png
 
 #"hardware" shit
 exec_always --no-startup-id setxkbmap -option caps:swapescape
-exec_always --no-startup-id xinput disable "SynPS/2 Synaptics TouchPad"
 exec_always --no-startup-id xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Speed" -0.5
 exec_always --no-startup-id xinput set-prop "Logitech G203 Prodigy Gaming Mouse" "libinput Accel Speed" -0.75
 exec_always --no-startup-id numlockx

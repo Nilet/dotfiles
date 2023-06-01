@@ -69,3 +69,5 @@ wget
 tmux
 bc
 spotify-launcher
+net-tools
+ttf-liberation
