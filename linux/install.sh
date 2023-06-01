@@ -9,7 +9,7 @@ echo "Getting sudo ready"
 sudo -v
 
 fontList="nerd-fonts-meslo terminus-font noto-fonts-emoji noto-fonts-cjk ttf-terminus-nerd ttf-hack"
-aurExtras="lf jumpapp"
+aurExtras="jumpapp insomnia-bin"
 
 echo "Moving dotfiles to home"
 sudo pacman -S --noconfirm rsync 
