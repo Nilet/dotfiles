@@ -35,8 +35,8 @@ AUREXTRAS="jumpapp insomnia-bin"
 if ! check_status "dotfiles"; then
     MESSAGE="Moving dotfiles to home"
     echo $MESSAGE
-    sudo pacman -S --noconfirm rsync || exit 1
-    rsync -av gotoHome/ ~ || exit 1
+    sudo pacman -S --noconfirm rsync || { echo "Failed: $MESSAGE" ; exit 1; }
+    rsync -av gotoHome/ ~ || { echo "Failed: $MESSAGE" ; exit 1; }
     echo "Moved to home"
     update_status "dotfiles"
 fi
@@ -44,8 +44,8 @@ fi
 if ! check_status "packages"; then
     MESSAGE="Installing packages"
     echo $MESSAGE
-    sudo pacman -Sy || exit 1
-    sudo pacman -S --needed --noconfirm $(cat packageList) || exit 1
+    sudo pacman -Sy || { echo "Failed: $MESSAGE" ; exit 1; }
+    sudo pacman -S --needed --noconfirm $(cat packageList) || { echo "Failed: $MESSAGE" ; exit 1; }
     echo "Packages installed"
     update_status "packages"
 fi
@@ -54,9 +54,9 @@ if ! check_status "yay"; then
     MESSAGE="Installing yay Aur Helper"
     echo $MESSAGE
     rm -rf yay > /dev/null
-    git clone https://aur.archlinux.org/yay.git || exit 1
+    git clone https://aur.archlinux.org/yay.git || { echo "Failed: $MESSAGE" ; exit 1; }
     cd yay
-    makepkg -si || exit 1
+    makepkg -si || { echo "Failed: $MESSAGE" ; exit 1; }
     rm -rf yay > /dev/null
     cd ~
     echo "Yay installed"
@@ -66,8 +66,8 @@ fi
 if ! check_status "fonts"; then
     MESSAGE="Installing fonts via AUR"
     echo $MESSAGE
-    yay -Sy || exit 1
-    yay -S --needed --noconfirm $FONTLIST || exit 1
+    yay -Sy || { echo "Failed: $MESSAGE" ; exit 1; }
+    yay -S --needed --noconfirm $FONTLIST || { echo "Failed: $MESSAGE" ; exit 1; }
     echo "Installed fonts via AUR"
     update_status "fonts"
 fi
@@ -75,7 +75,7 @@ fi
 if ! check_status "extras"; then
     MESSAGE="Installing extras with yay"
     echo $MESSAGE
-    yay -S --needed --noconfirm $AUREXTRAS || exit 1
+    yay -S --needed --noconfirm $AUREXTRAS || { echo "Failed: $MESSAGE" ; exit 1; }
     echo "Installed extra software"
     update_status "extras"
 fi
@@ -84,8 +84,8 @@ if ! check_status "zsh_plugins"; then
     MESSAGE="Installing zsh plugins"
     echo $MESSAGE
     mkdir -p ~/.zsh/plugins
-    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions/ || exit 1
-    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/plugins/fast-syntax-highlighting/ || exit 1
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions/ || { echo "Failed: $MESSAGE" ; exit 1; }
+    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/plugins/fast-syntax-highlighting/ || { echo "Failed: $MESSAGE" ; exit 1; }
     echo "zsh plugins installed"
     update_status "zsh_plugins"
 fi
@@ -93,8 +93,8 @@ fi
 if ! check_status "tmux"; then
     MESSAGE="Setting up tmux"
     echo $MESSAGE
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || exit 1
-    ~/.tmux/plugins/tpm/bin/install_plugins || exit 1
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm || { echo "Failed: $MESSAGE" ; exit 1; }
+    ~/.tmux/plugins/tpm/bin/install_plugins || { echo "Failed: $MESSAGE" ; exit 1; }
     echo "tmux finally set up"
     update_status "tmux"
 fi
@@ -102,9 +102,9 @@ fi
 if ! check_status "neovim"; then
     MESSAGE="Setting up neovim"
     echo $MESSAGE
-    git clone https://github.com/Nilet/nvim ~/.config/nvim || exit 1
+    git clone https://github.com/Nilet/nvim ~/.config/nvim || { echo "Failed: $MESSAGE" ; exit 1; }
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-     ~/.local/share/nvim/site/pack/packer/start/packer.nvim || exit 1
+     ~/.local/share/nvim/site/pack/packer/start/packer.nvim || { echo "Failed: $MESSAGE" ; exit 1; }
     nvim -c ":PackerSync"
     echo "Nvim working as usual"
     update_status "neovim"
@@ -113,8 +113,8 @@ fi
 if ! check_status "ssh"; then
     MESSAGE="Setting up SSH service"
     echo $MESSAGE
-    sudo systemctl enable sshd.service || exit 1
-    sudo systemctl start sshd.service || exit 1
+    sudo systemctl enable sshd.service || { echo "Failed: $MESSAGE" ; exit 1; }
+    sudo systemctl start sshd.service || { echo "Failed: $MESSAGE" ; exit 1; }
     echo "SSH setup finished"
     update_status "ssh"
 fi
@@ -123,7 +123,7 @@ if ! check_status "i3currentmedia"; then
     MESSAGE="Installing i3currentmedia"
     echo $MESSAGE
     mkdir -p ~/.local/scripts/
-    git clone https://github.com/Nilet/i3currentMedia ~/.local/scripts/i3currentMedia/ || exit 1
+    git clone https://github.com/Nilet/i3currentMedia ~/.local/scripts/i3currentMedia/ || { echo "Failed: $MESSAGE" ; exit 1; }
     echo "i3currentmedia installed"
     update_status "i3currentmedia"
 fi
@@ -131,7 +131,7 @@ fi
 if ! check_status "zsh_default"; then
     MESSAGE="Changing zsh to default"
     echo $MESSAGE
-    chsh -s /usr/bin/zsh || exit 1
+    chsh -s /usr/bin/zsh || { echo "Failed: $MESSAGE" ; exit 1; }
     echo "ZSH is the default shell now"
     update_status "zsh_default"
 fi
