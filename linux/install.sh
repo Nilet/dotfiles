@@ -12,7 +12,7 @@ if [ "$UID" -eq 0 ]; then
 fi
 
 check_status() {
-    STEP_NAME=\$1
+    STEP_NAME=$1
     if grep -q "$STEP_NAME" "$STATUS_FILE"; then
         echo "Skipping $STEP_NAME"
         return 0
@@ -22,7 +22,7 @@ check_status() {
 }
 
 update_status() {
-    STEP_NAME=\$1
+    STEP_NAME=$1
     echo "$STEP_NAME" >> "$STATUS_FILE"
 }
 
