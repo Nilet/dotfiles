@@ -139,6 +139,8 @@ fi
 if ! check_status "user_configs"; then
     sed -i "s/matheus/$(whoami)/g" ~/.config/i3/config
     sed -i "s/matheus/$(whoami)/g" ~/.zshrc
+    sed -i "s/matheus/$(whoami)/g" ~/.config/mpv/mpv.conf
+    sed -i "s/matheus/$(whoami)/g" ~/.config/mpv/scripts/webm.lua
     update_status "user_configs"
 fi
 
