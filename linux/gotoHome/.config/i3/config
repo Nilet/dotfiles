@@ -9,31 +9,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-#my gruvbox colorscheme
-set $black #282828
-set $bg #282828
-set $blue #377375
-set $cyan #578e57
-set $green #98971a
-set $magenta #a04b73
-set $red #be0f17
-set $white #978771
-set $yellow #cc881a
-set $darkgray #1e1e1e
-set $purple #b16286
-set $aqua #8ec07c
-
-# class                 border|backgr|text|indicator|child_border
-client.focused          $green $green $darkgray $purple $darkgray
-client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-client.urgent           $red $red $white $red $red
-
 set $mod Mod4
 set $sup Mod1
 
 #Font for window titles. 
-font pango: Terminus 9
+font pango: Hack 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -139,7 +119,6 @@ workspace_auto_back_and_forth yes
 bindsym F2 workspace back_and_forth
 #focus the last focused window in the same workspace 
 exec --no-startup-id ~/.local/bin/lastwindow
-exec ~/.local/scripts/picom.sh
 bindsym $mod+F2 [con_mark=_last] focus
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -148,22 +127,7 @@ bar {
 		#tray_output none
 		position bottom
         status_command i3status --config ~/.config/i3/i3status.conf | ~/.local/scripts/i3currentMedia/pystatus.py
-		colors {
-				# bar background color
-				background $bg
-				# text color used for blocks that do not have a color specified.
-				statusline $yellow
-				# workspaces section            
-				#                    border  backgr. text
-				focused_workspace    $green $green $darkgray
-				inactive_workspace   $darkgray $darkgray $yellow
-				active_workspace     $darkgray $darkgray $yellow
-				urgent_workspace     $red $red $bg
-			}
 }
-
-#disable titlebar
-for_window [class="^.*"] border pixel 1
 
 #Wallpaper
 exec --no-startup-id feh --bg-tile /home/matheus/Pictures/wallpaper.png
@@ -219,6 +183,6 @@ bindsym XF86AudioMicMute exec pactl set-source-mute 1 toggle
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPlay exec playerctl play-pause
-# bRIghtness control require `sudo pacman -S brightnessctl`
+# Brightness control require `sudo pacman -S brightnessctl`
 bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
