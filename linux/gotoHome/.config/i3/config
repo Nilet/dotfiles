@@ -172,7 +172,7 @@ bindsym F10 exec "jumpapp thunderbird"
 bindsym F9 exec "jumpapp telegram-desktop"
 bindsym Insert exec "jumpapp spotify-launcher"
 bindsym F7 exec "jumpapp alacritty"
-bindsym F8 exec "jumpapp discord-ptb"
+bindsym F8 exec "jumpapp discord"
 bindsym $mod+e exec "jumpapp thunar"
 
 # Pulse Audio controls (has no volume limit, and this is a feature, not a bug)
