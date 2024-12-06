@@ -36,7 +36,8 @@ if ! check_status "dotfiles"; then
     MESSAGE="Moving dotfiles to home"
     echo $MESSAGE
     sudo pacman -S --noconfirm rsync || { echo "Failed: $MESSAGE" ; exit 1; }
-    rsync -av gotoHome/ ~ || { echo "Failed: $MESSAGE" ; exit 1; }
+    cd gotoHome
+    rsync -av . ~ || { echo "Failed: $MESSAGE" ; exit 1; }
     echo "Moved to home"
     update_status "dotfiles"
 fi
